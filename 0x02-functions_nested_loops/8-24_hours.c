@@ -1,12 +1,15 @@
 #include "holberton.h"
 /**
+ * jack_bauer - prints every minute of the day
  *
+ * Return: the hour from 00:00 to 23:59
  */
 void jack_bauer(void)
 {
-	int a, b;
+	int a;
+	int b;
 
-	for(a = 0 ; a <= 23 ; a++)
+	for (a = 0 ; a <= 23 ; a++)
 	{
 		for (b = 0 ; b <= 59 ; b++)
 		{
