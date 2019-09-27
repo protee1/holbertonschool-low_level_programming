@@ -8,7 +8,7 @@ int main(void)
 {
 	int m;
 
-	for (m = 1 ; m <= 100 ; m++)
+	for (m = 1 ; m < 100 ; m++)
 	{
 		if ((m % 3) == 0)
 		{
@@ -17,10 +17,6 @@ int main(void)
 		else if ((m % 5) == 0)
 		{
 			printf("Buzz ");
-		}
-		else if ((m % 5) == 0 && m == 100)
-		{
-			printf("Buzz");
 		}
 		else if ((m % 3) == 0 && (m % 5) == 0)
 		{
@@ -31,6 +27,7 @@ int main(void)
 		printf("%d ", m);
 		}
 	}
+	printf("Buzz");
 	printf("\n");
 	return (0);
 }
