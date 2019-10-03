@@ -1,6 +1,8 @@
 #include "holberton.h"
 /**
  * _strncat - concatenates two strings
+ * @dest: input parameter string
+ * @src: input parameter string
  * @n: times to iterations
  *
  * Return: dest
