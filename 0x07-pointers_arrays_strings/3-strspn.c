@@ -21,9 +21,9 @@ unsigned int _strspn(char *s, char *accept)
 				j++;
 				return (j + i);
 			}
-			j++;
+			i++;
 		}
-		i++;
+		j++;
 	}
 	return (j + i);
 }
