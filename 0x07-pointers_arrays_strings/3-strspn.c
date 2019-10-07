@@ -23,10 +23,10 @@ unsigned int _strspn(char *s, char *accept)
 			j++;
 		}
 		i++;
-		if (i > count)
-		{
-			break;
-		}
+	}
+	if (i > count)
+	{
+		break;
 	}
 	return (count);
 }
