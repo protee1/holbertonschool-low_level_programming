@@ -24,6 +24,10 @@ unsigned int _strspn(char *s, char *accept)
 				return (j + i);
 			}
 		}
+		if(accept[j] != '\0')
+		{
+			break;
+		}
 	}
-	return ('\0');
+	return (j + i);
 }
