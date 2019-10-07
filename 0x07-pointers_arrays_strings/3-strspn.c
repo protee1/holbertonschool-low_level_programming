@@ -13,17 +13,17 @@ unsigned int _strspn(char *s, char *accept)
 
 	while (s[i] != '\0')
 	{
-			while (accept[j] != '\0')
+		while (accept[j] != '\0')
+		{
+			if (accept[j] == s[i])
 			{
-				if (accept[j] == s[i])
-				{
-					i++;
-					j++;
-					return (j + i);
-				}
+				i++;
 				j++;
+				return (j + i);
 			}
-			i++;
+			j++;
 		}
+		i++;
+	}
 	return (j + i);
 }
