@@ -8,7 +8,7 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int count;
+	int count = 0;
 	int i = 0;
 	int j = 0;
 
@@ -22,11 +22,12 @@ unsigned int _strspn(char *s, char *accept)
 			}
 			j++;
 		}
+		j = 0;
 		i++;
-	}
-	if (i > count)
-	{
-		break;
+		if (s[i] == ' ')
+		{
+			break;
+		}
 	}
 	return (count);
 }
