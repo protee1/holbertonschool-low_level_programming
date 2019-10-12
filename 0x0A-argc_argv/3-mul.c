@@ -1,4 +1,6 @@
 #include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
 /**
  * main - multiplies two numbers
  * @argv: argument vector for values
