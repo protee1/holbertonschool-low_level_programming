@@ -15,6 +15,7 @@ int _strlen(char *s)
 }
 #include "holberton.h"
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * _strdup - returns a pointer which contains a copy of the string
  * given as a parameter
@@ -35,7 +36,7 @@ char *_strdup(char *str)
 	}
 	i = _strlen(str);
 	copy = malloc(sizeof(char) * i + 1);
-	if(str == '\0')
+	if(copy == '\0')
 	{
 		return ('\0');
 	}
