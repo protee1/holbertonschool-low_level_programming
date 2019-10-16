@@ -16,7 +16,7 @@ int **alloc_grid(int width, int height)
 		return ('\0');
 	}
 
-	net = malloc(sizeof(int) * height);
+	net = malloc(sizeof(int) * width);
 
 	if(net == '\0')
 	{
@@ -24,7 +24,7 @@ int **alloc_grid(int width, int height)
 	}
 	for(a = 0 ; a < height ; a++)
 	{
-		net[a] = malloc(sizeof(int) * width);
+		net[a] = malloc(sizeof(int) * height);
 		for(b = 0 ; b < width ; b++)
 		{
 			net[a][b] = 0;
