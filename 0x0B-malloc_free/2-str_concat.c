@@ -47,12 +47,11 @@ char *_strcat(char *dest, char *src)
 }
 
 /**
- * str_concat -
+ * str_concat - concatenate to strings
+ * @s1: the string to print
+ * @s2: the string to print
  *
- *
- *
- *
- *
+ * Return: pointer that contains the content of s1 followed by s2
  */
 char *str_concat(char *s1, char *s2)
 {
@@ -72,7 +71,7 @@ char *str_concat(char *s1, char *s2)
 
 		if (space == '\0')
 		{
-			return('\0');
+			return ('\0');
 		}
 		else
 		{
