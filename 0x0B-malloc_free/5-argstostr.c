@@ -24,10 +24,6 @@ char *argstostr(int ac, char **av)
 		{
 			new = str_concat(new, salt);
 			new = str_concat(new, av[i]);
-			if (new == NULL)
-			{
-				return (NULL);
-			}
 		}
 	}
 	new = str_concat(new, salt);
