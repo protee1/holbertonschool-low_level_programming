@@ -23,7 +23,15 @@ char *argstostr(int ac, char **av)
 		for (i = 1 ; i < ac ; i++)
 		{
 			new = str_concat(new, salt);
+			if (new == NULL)
+			{
+				return (NULL);
+			}
 			new = str_concat(new, av[i]);
+			if (new == NULL)
+			{
+				return (NULL);
+			}
 		}
 	}
 	new = str_concat(new, salt);
