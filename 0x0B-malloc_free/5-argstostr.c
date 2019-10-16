@@ -27,7 +27,7 @@ char *argstostr(int ac, char **av)
 				;
 			}
 		}
-		new = malloc(sizeof(char) * k);
+		new = malloc(sizeof(char) * (k + 1));
 		salt = "\n";
 		for (i = 0 ; i < ac ; i++)
 		{
