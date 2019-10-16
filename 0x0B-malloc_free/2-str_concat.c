@@ -1,0 +1,82 @@
+#include "holberton.h"
+#include <stdlib.h>
+
+/**
+ * _strlen - give the length of a string
+ * @s: the string
+ *
+ * Return: the length of a string
+ */
+int _strlen(char *s)
+{
+	int i;
+
+	for (i = 0 ; s[i] != '\0' ; i++)
+		;
+	return (i);
+}
+
+/**
+ * _strcat - concatenates two strings
+ * @dest: input parameter string
+ * @src: input parameter string
+ *
+ * Return: dest
+ */
+char *_strcat(char *dest, char *src)
+{
+	int a;
+	int b;
+
+	a = 0;
+
+	while (dest[a] != 0)
+	{
+		a++;
+	}
+
+	b = 0;
+
+	while (src[b] != 0)
+	{
+		dest[a] = src[b];
+		a++;
+		b++;
+	}
+	return (dest);
+}
+
+/**
+ * str_concat -
+ *
+ *
+ *
+ *
+ *
+ */
+char *str_concat(char *s1, char *s2)
+{
+	int length;
+	char *space;
+
+	length = _strlen(s1) + _strlen(s2);
+	if (s1 != '\0' && s2 != '\0')
+	{
+		space = malloc(sizeof(char) * length + 1);
+
+		if (space == '\0')
+		{
+			return('\0');
+		}
+		else
+		{
+			space = _strcat(space, s1);
+			space = _strcat(space, s2);
+		}
+	}
+	else
+	{
+		space = "";
+	}
+	return (space);
+}
