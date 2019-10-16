@@ -1,5 +1,6 @@
 #include "holberton.h"
 
+
 /**
  * argstostr - concatenates all the arguments
  * @av: the content
@@ -18,19 +19,22 @@ char *argstostr(int ac, char **av)
 	}
 	else
 	{
-		new = av[0];
+		new = malloc(sizeof(char *));
 		salt = "\n";
-		for (i = 1 ; i < ac ; i++)
+		for (i = 0 ; i < ac ; i++)
 		{
-			new = str_concat(new, salt);
-			if (new == NULL)
-			{
-				return (NULL);
-			}
 			new = str_concat(new, av[i]);
 			if (new == NULL)
 			{
 				return (NULL);
+			}
+			if (i + 1 < ac)
+			{
+				new = str_concat(new, salt);
+				if (new == NULL)
+				{
+					return (NULL);
+				}
 			}
 		}
 	}
@@ -127,6 +131,6 @@ char *str_concat(char *s1, char *s2)
 	{
 		space = "";
 	}
+	free(s1);
 	return (space);
-	free(space);
 }
