@@ -1,7 +1,5 @@
 #include "holberton.h"
 
-char *str_concat(char *s1, char *s2);
-
 /**
  * argstostr - concatenates all the arguments
  * @av: the content
@@ -26,9 +24,17 @@ char *argstostr(int ac, char **av)
 		{
 			new = str_concat(new, salt);
 			new = str_concat(new, av[i]);
+			if (new == NULL)
+			{
+				return (NULL);
+			}
 		}
 	}
 	new = str_concat(new, salt);
+	if (new == NULL)
+	{
+		return (NULL);
+	}
 	return (new);
 }
 
