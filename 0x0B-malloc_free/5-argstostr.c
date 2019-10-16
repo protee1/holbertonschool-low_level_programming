@@ -1,5 +1,6 @@
 #include "holberton.h"
 
+char *_strcat(char *dest, char *src);
 
 /**
  * argstostr - concatenates all the arguments
@@ -11,7 +12,7 @@
 char *argstostr(int ac, char **av)
 {
 	char *new, *salt;
-	int i;
+	int i, j, k;
 
 	if (ac == 0 || av == NULL)
 	{
@@ -19,26 +20,34 @@ char *argstostr(int ac, char **av)
 	}
 	else
 	{
-		new = malloc(sizeof(char *));
+		for (i = 0, k = 0 ; i < ac ; i++, k++)
+		{
+			for (j = 0 ; av[i][j] != '\0' ; j++, k++)
+			{
+				;
+			}
+		}
+		new = malloc(sizeof(char) * k);
 		salt = "\n";
 		for (i = 0 ; i < ac ; i++)
 		{
-			new = str_concat(new, av[i]);
+			new = _strcat(new, av[i]);
 			if (new == NULL)
 			{
 				return (NULL);
 			}
 			if (i + 1 < ac)
 			{
-				new = str_concat(new, salt);
+				new = _strcat(new, salt);
 				if (new == NULL)
 				{
 					return (NULL);
 				}
 			}
 		}
+
 	}
-	new = str_concat(new, salt);
+	new = _strcat(new, salt);
 	if (new == NULL)
 	{
 		return (NULL);
@@ -100,9 +109,6 @@ char *_strcat(char *dest, char *src)
  */
 char *str_concat(char *s1, char *s2)
 {
-	int length;
-	char *space;
-
 	if (s1 == '\0')
 	{
 		s1 = "";
@@ -111,26 +117,20 @@ char *str_concat(char *s1, char *s2)
 	{
 		s2 = "";
 	}
-
-	length = _strlen(s1) + _strlen(s2);
 	if (s1 != '\0' && s2 != '\0')
 	{
-		space = malloc(sizeof(char) * length + 1);
-
-		if (space == '\0')
+		if (s1 == '\0')
 		{
 			return ('\0');
 		}
 		else
 		{
-			space = _strcat(space, s1);
-			space = _strcat(space, s2);
+			s1 = _strcat(s1, s2);
 		}
 	}
 	else
 	{
-		space = "";
+		s1 = "";
 	}
-	free(s1);
-	return (space);
+	return (s1);
 }
