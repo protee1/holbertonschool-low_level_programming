@@ -2,7 +2,7 @@
 
 /**
  * free_grid - frees 2 dimensional grid
- * @grid:
+ * @grid: two dimensional grid
  * @height: height of the array
  *
  * Return: a pointer to a 2 dimensional array of integers
