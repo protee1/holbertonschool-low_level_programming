@@ -34,6 +34,7 @@ void print_string(va_list arguments)
 	if (args == NULL)
 	{
 		printf("%p", args);
+		return;
 	}
 	printf("%s", args);
 }
