@@ -3,9 +3,9 @@
 #include <stdio.h>
 #include <stdarg.h>
 /**
- *
- *
- *
+ * struct print_all - prints anything
+ * @all: arguments
+ * @func: pointer to the functions that prints all
  */
 typedef struct print_all
 {
