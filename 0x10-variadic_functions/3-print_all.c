@@ -13,7 +13,7 @@ void print_char(va_list arguments)
  */
 void print_string(va_list arguments)
 {
-	char *args = va_arg(arguments, char *);
+	char *args = va_arg(arguments, char*);
 
 	if (args == NULL)
 	{
@@ -35,7 +35,7 @@ void print_float(va_list arguments)
  */
 void print_int(va_list arguments)
 {
-	printf("%i", va_arg(arguments, int));
+	printf("%d", va_arg(arguments, int));
 }
 /**
  * print_all - prints anything
