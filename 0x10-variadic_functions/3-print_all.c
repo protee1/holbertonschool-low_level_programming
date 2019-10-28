@@ -43,8 +43,6 @@ void print_int(va_list arguments)
  */
 void print_all(const char * const format, ...)
 {
-	va_list arguments;
-
 	int i, j;
 
 	simbol_t identifier[] = {
@@ -55,6 +53,8 @@ void print_all(const char * const format, ...)
 	};
 
 	char *comma = "";
+
+	va_list arguments;
 
 	va_start(arguments, format);
 
