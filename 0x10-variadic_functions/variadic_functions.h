@@ -1,6 +1,7 @@
 #ifndef VARIADIC_FUNCTIONS
 #define VARIADIC_FUNCTIONS
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdarg.h>
 /**
  * struct print_all - prints anything

@@ -43,8 +43,6 @@ void print_int(va_list arguments)
  */
 void print_all(const char * const format, ...)
 {
-	int i, j;
-
 	simbol_t identifier[] = {
 		{'c', print_char},
 		{'s', print_string},
@@ -52,13 +50,13 @@ void print_all(const char * const format, ...)
 		{'i', print_int}
 	};
 
+	int i = 0, j;
 	char *comma = "";
 
 	va_list arguments;
 
 	va_start(arguments, format);
 
-	i = 0;
 	while (format && format[i])
 	{
 		j = 0;
