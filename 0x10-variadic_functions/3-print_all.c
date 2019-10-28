@@ -45,16 +45,15 @@ void print_all(const char * const format, ...)
 {
 	va_list arguments;
 
+	int i, j;
+	char *comma = "";
+
 	id_t identifier[] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'f', print_float},
 		{'i', print_int}
 	};
-
-
-	int i, j;
-	char *comma = "";
 
 	va_start(arguments, format);
 
