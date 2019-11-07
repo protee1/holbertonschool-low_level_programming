@@ -21,11 +21,15 @@ unsigned int binary_to_uint(const char *b)
 			}
 		}
 
-		for (i = 0, length-- ; length > 0 ; length--)
+		for (i = 0, length-- ; length >= 0 ; length--)
 		{
 			add = add + ((b[length] - '0') << i);
 			i++;
 		}
+	}
+	else
+	{
+		return (0);
 	}
 	return (add);
 }
