@@ -13,8 +13,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int ff, ft;
-	unsigned int r, w;
+	int ff, ft, r, w;
 	char *buffer;
 
 	if (argc != 3)
@@ -33,7 +32,7 @@ int main(int argc, char *argv[])
 	buffer = malloc(1024);
 	while ((r = read(ff, buffer, 1024)) != 0)
 	{w = write(ft, buffer, r);
-		if (w != r)
+		if ((w != r) && (ft == -1))
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[1]);
 			exit(99);
