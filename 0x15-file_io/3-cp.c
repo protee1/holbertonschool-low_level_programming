@@ -1,5 +1,4 @@
-#include "holberton.h"
-#include <stdio.h>
+#include "holberton.h"#include <stdio.h>
 /**
  * main - copies the content of a file to another file
  * @argv: argument vector
@@ -18,7 +17,8 @@ int main(int argc, char *argv[])
 
 	ff = open(argv[1], O_RDONLY);
 	if (ff == -1)
-	{dprintf(STDERR_FILENO, "Error: Can't read from a file %s\n", argv[0]);
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from a file %s\n", argv[0]);
 		exit(98);
 	}
 
@@ -30,12 +30,12 @@ int main(int argc, char *argv[])
 		if (ft == -1 || (write(ft, buffer, r) != r))
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			close(ft);
 			exit(99);
 		}
 	}
-        if (r == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+	if (r == -1)
+	{dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	if (close(ff) == -1)
@@ -43,8 +43,8 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 	if (close(ft) == -1)
-	{dprintf(STDERR_FILENO, "Error: Can't close fd %d", ft);
-		exit(100);
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d", ft), exit(100);
 	}
 	return (0);
 }
