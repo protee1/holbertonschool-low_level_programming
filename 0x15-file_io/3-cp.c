@@ -28,9 +28,10 @@ int main(int argc, char *argv[])
 	buffer = malloc(1024);
 	while ((r = read(ff, buffer, 1024)) > 0)
 	{
-		if (ft == -1 || (write(ft, buffer, r) != r))
+		if (ft == -1 || write(ft, buffer, r) != r)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			close(ff);
 			close(ft);
 			exit(99);
 		}
@@ -40,8 +41,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	if (close(ff) == -1)
-	{dprintf(STDERR_FILENO, "Error: Can't close fd %d", ff);
-		exit(100);
+	{dprintf(STDERR_FILENO, "Error: Can't close fd %d", ff), exit(100);
 	}
 	if (close(ft) == -1)
 	{dprintf(STDERR_FILENO, "Error: Can't close fd %d", ft), exit(100);
