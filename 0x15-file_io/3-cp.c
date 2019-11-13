@@ -13,7 +13,8 @@
  */
 int main(int argc, char *argv[])
 {
-	int ff, ft, r;
+	int ff, ft;
+	unsigned int r;
 	char *buffer;
 
 	if (argc != 3)
