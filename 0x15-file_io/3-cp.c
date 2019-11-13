@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	ft = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	ft = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 
 	buffer = malloc(1024);
 	while ((r = read(ff, buffer, 1024)) > 0)
