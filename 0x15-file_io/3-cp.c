@@ -8,7 +8,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int ff, ft, r;
+	int ff, ft, r, w;
 	char *buffer;
 
 	if (argc != 3)
