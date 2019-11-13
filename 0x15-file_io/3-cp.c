@@ -27,17 +27,17 @@ int main(int argc, char *argv[])
 
 	buffer = malloc(1024);
 	while ((r = read(ff, buffer, 1024)) > 0)
-	{w = write(ft, buffer, r);
-		if (ft == -1 || w != r)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			close(ff);
-			close(ft);
-			exit(99);
-		}
+	{
 		if (r == -1)
 		{dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			exit(98);
+		}
+		w = write(ft, buffer, r);
+		if (ft == -1 || w != r)
+		{dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			close(ff);
+			close(ft);
+			exit(99);
 		}
 	}
 	if (close(ff) == -1)
