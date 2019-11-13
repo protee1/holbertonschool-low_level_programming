@@ -1,10 +1,5 @@
 #include "holberton.h"
 #include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <sys/types.h>
-#include <sys/stat.h>
 /**
  * main - copies the content of a file to another file
  * @argv: argument vector
@@ -13,7 +8,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int ff, ft, r, w;
+	int ff, ft, r;
 	char *buffer;
 
 	if (argc != 3)
@@ -30,13 +25,18 @@ int main(int argc, char *argv[])
 	ft = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	buffer = malloc(1024);
-	while ((r = read(ff, buffer, 1024)) != 0)
-	{w = write(ft, buffer, r);
-		if ((w != r) && (ft == -1))
+	while ((r = read(ff, buffer, 1024)) > 0)
+	{
+		if (ft == -1 || (write(ft, buffer, r) != r))
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[1]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
+	}
+        if (r == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
 	}
 	if (close(ff) == -1)
 	{dprintf(STDERR_FILENO, "Error: Can't close fd %d", ff);
