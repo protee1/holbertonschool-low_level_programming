@@ -1,4 +1,5 @@
-#include "holberton.h"#include <stdio.h>
+#include "holberton.h"
+#include <stdio.h>
 /**
  * main - copies the content of a file to another file
  * @argv: argument vector
@@ -43,8 +44,7 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 	if (close(ft) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", ft), exit(100);
+	{dprintf(STDERR_FILENO, "Error: Can't close fd %d", ft), exit(100);
 	}
 	return (0);
 }
