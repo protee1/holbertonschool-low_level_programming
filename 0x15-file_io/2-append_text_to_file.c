@@ -32,6 +32,9 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 	}
 
+	close(filed);
+	return (1);
+
 	if (text_content == NULL)
 	{
 		if (filename == NULL)
@@ -43,7 +46,4 @@ int append_text_to_file(const char *filename, char *text_content)
 			return (1);
 		}
 	}
-
-	close(filed);
-	return (1);
 }
