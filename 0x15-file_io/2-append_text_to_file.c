@@ -10,6 +10,9 @@ int append_text_to_file(const char *filename, char *text_content)
 {
 	int filed, i;
 
+	if (filename == NULL)
+		return (-1);
+
 	if (text_content == NULL)
 	{
 		text_content = "";
@@ -23,13 +26,13 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (filed == -1)
 		return (-1);
 
-	write(filed, text_content, i);
+	w = write(filed, text_content, i);
+
+	if (w == -1)
+		return (-1);
 
 	close(filed);
 	return (1);
-
-	if (filename == NULL)
-		return (-1);
 
 	if (text_content == NULL)
 	{
