@@ -8,8 +8,7 @@
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *tmp;
-	dlistint_t *delenode = *head;
+	dlistint_t *tmp, *delenode = *head;
 
 	if (*head != NULL)
 	{
@@ -27,12 +26,12 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		free(delenode);
 		return (1);
 	}
-	for (; delenode; delenode = delenode-> next, index--)
+	for (; delenode; delenode = delenode->next, index--)
 	{
 		if (index - 1 == 0)
 		{
 			tmp = delenode->next;
-			if (tmp != NULL)
+			if (!tmp)
 			{
 				break;
 			}
