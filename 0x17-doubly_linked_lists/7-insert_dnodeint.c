@@ -39,12 +39,12 @@ unsigned int idx, int n)
 				prev->next = newnode;
 				return (newnode);
 			}
-			newnode->next = NULL;
-			newnode->prev = NULL;
-			newnode->n = n;
-			*head = newnode;
-			return (newnode);
 		}
+		newnode->next = NULL;
+		newnode->prev = NULL;
+		newnode->n = n;
+		*head = newnode;
+		return (newnode);
 	}
 	return (NULL);
 }
