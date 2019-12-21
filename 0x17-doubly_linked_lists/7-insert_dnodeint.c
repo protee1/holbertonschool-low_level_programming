@@ -12,9 +12,9 @@ unsigned int idx, int n)
 	dlistint_t *newnode, *current = *head, *prev;
 	unsigned int index;
 
-	newnode = malloc(sizeof(dlistint_t));
 	if (*head == NULL && idx != 0)
 		return (NULL);
+	newnode = malloc(sizeof(dlistint_t));
 	if (newnode != NULL)
 	{
 		if (*head == NULL)
