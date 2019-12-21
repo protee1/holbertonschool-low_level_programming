@@ -1,7 +1,7 @@
 #include "lists.h"
 /**
  * insert_dnode_at_index - inserts a new node at a given posotion
- * @head: the pointer to the struct
+ * @h: the pointer to the struct
  * @idx: index of the list where the new node should be added
  * @n: integer in the struct
  * Return: Address of the new node or NULL if it failed
@@ -15,6 +15,9 @@ unsigned int idx, int n)
 	if (*h == NULL && idx != 0)
 		return (NULL);
 	newnode = malloc(sizeof(dlistint_t));
+	if (newnode == NULL)
+		return (NULL);
+
 	if (*h != NULL)
 	{prev = NULL;
 		while (current->prev != NULL)
@@ -39,9 +42,6 @@ unsigned int idx, int n)
 		}
 		return (NULL);
 	}
-	if (newnode == NULL)
-		return (NULL);
-
 	newnode->next = NULL;
 	newnode->prev = NULL;
 	newnode->n = n;
