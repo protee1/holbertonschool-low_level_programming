@@ -6,18 +6,18 @@
  * @n: integer in the struct
  * Return: Address of the new node or NULL if it failed
  */
-dlistint_t *insert_dnodeint_at_index(dlistint_t **head,
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h,
 unsigned int idx, int n)
 {
-	dlistint_t *newnode, *current = *head, *prev;
+	dlistint_t *newnode, *current = *h, *prev;
 	unsigned int index;
 
-	if (*head == NULL && idx != 0)
+	if (*h == NULL && idx != 0)
 		return (NULL);
 	newnode = malloc(sizeof(dlistint_t));
 	if (newnode != NULL)
 	{
-		if (*head != NULL)
+		if (*h != NULL)
 		{prev = NULL;
 			while (current->prev != NULL)
 				current = current->prev;
@@ -35,16 +35,16 @@ unsigned int idx, int n)
 					current->prev = newnode;
 				newnode->next = current;
 				if (idx == 0)
-					*head = newnode;
+					*h = newnode;
 				prev->next = newnode;
 				return (newnode);
 			}
 		}
-		newnode->next = NULL;
-		newnode->prev = NULL;
-		newnode->n = n;
-		*head = newnode;
-		return (newnode);
-	}
 	return (NULL);
+	}
+	newnode->next = NULL;
+	newnode->prev = NULL;
+	newnode->n = n;
+	*h = newnode;
+	return (newnode);
 }
