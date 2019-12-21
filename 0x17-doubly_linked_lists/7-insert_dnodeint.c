@@ -26,18 +26,18 @@ unsigned int idx, int n)
 		{prev = current;
 			current = current->next;
 		}
-		if (index != idx)
-		{return (NULL);
-		}
-		else
+		if (index == idx)
 		{newnode->n = n;
 			newnode->prev = prev;
 			if (current != NULL)
 				current->prev = newnode;
 			newnode->next = current;
 			if (idx == 0)
-				*h = newnode;
-			prev->next = newnode;
+			{*h = newnode;
+			}
+			else
+			{prev->next = newnode;
+			}
 			return (newnode);
 		}
 		return (NULL);
