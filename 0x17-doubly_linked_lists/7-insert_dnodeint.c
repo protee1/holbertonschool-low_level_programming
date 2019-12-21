@@ -15,33 +15,31 @@ unsigned int idx, int n)
 	if (*h == NULL && idx != 0)
 		return (NULL);
 	newnode = malloc(sizeof(dlistint_t));
-	if (newnode != NULL)
-	{
-		if (*h != NULL)
-		{prev = NULL;
-			while (current->prev != NULL)
-				current = current->prev;
-			for (index = 0; current != NULL && index < idx; index++)
-			{prev = current;
-				current = current->next;
-			}
-			if (index != idx)
-			{return (NULL);
-			}
-			else
-			{newnode->n = n;
-				newnode->prev = prev;
-				if (current != NULL)
-					current->prev = newnode;
-				newnode->next = current;
-				if (idx == 0)
-					*h = newnode;
-				prev->next = newnode;
-				return (newnode);
-			}
+	if (*h != NULL)
+	{prev = NULL;
+		while (current->prev != NULL)
+			current = current->prev;
+		for (index = 0; current != NULL && index < idx; index++)
+		{prev = current;
+			current = current->next;
+		}
+		if (index != idx)
+		{return (NULL);
+		}
+		else
+		{newnode->n = n;
+			newnode->prev = prev;
+			if (current != NULL)
+				current->prev = newnode;
+			newnode->next = current;
+			if (idx == 0)
+				*h = newnode;
+			prev->next = newnode;
+			return (newnode);
 		}
 	}
-	return (NULL);
+	if (newnode == NULL)
+		return (NULL);
 	newnode->next = NULL;
 	newnode->prev = NULL;
 	newnode->n = n;
