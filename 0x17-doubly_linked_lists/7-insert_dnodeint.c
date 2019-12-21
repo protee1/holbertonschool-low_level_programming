@@ -40,8 +40,8 @@ unsigned int idx, int n)
 				return (newnode);
 			}
 		}
-	return (NULL);
 	}
+	return (NULL);
 	newnode->next = NULL;
 	newnode->prev = NULL;
 	newnode->n = n;
