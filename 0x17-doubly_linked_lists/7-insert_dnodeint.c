@@ -37,9 +37,11 @@ unsigned int idx, int n)
 			prev->next = newnode;
 			return (newnode);
 		}
+		return (NULL);
 	}
 	if (newnode == NULL)
 		return (NULL);
+
 	newnode->next = NULL;
 	newnode->prev = NULL;
 	newnode->n = n;
