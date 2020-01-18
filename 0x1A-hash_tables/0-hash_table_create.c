@@ -12,6 +12,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	if (size != 0)
 	{
 		new_hash_table = malloc(sizeof(hash_table_t));
+		new_hash_table->array = malloc(sizeof(hash_table_t *) * 1024);
 
 		if (new_hash_table == NULL)
 			return (NULL);
