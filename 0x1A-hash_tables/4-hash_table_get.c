@@ -19,10 +19,10 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	index = key_index((const unsigned char *)key, ht->size);
 
-	new_node = ht->array[index];
-
 	while (ht->array[index] != NULL)
 	{
+		new_node = ht->array[index];
+
 		if (strcmp(ht->array[index]->key, key) == 0)
 		{
 			return (new_node->value);
