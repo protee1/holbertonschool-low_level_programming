@@ -21,7 +21,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	new_node = ht->array[index];
 
-	if (new_node != NULL)
+	if (ht->array[index] != NULL)
 	{
 		while (new_node == NULL)
 		{
