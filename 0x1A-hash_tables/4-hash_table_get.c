@@ -33,5 +33,5 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 		}
 		index++;
 	}
-	return (ht->array[index]->value);
+	return (NULL);
 }
