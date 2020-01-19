@@ -21,19 +21,16 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	new_node = ht->array[index];
 
-	while (new_node == NULL)
+	while (new_node != NULL)
 	{
-		return (NULL);
-	}
-
-	if (ht->array[index] != NULL)
-	{
-		if (strcmp(ht->array[index]->key, key) == 0)
+		if (ht->array[index] != NULL)
 		{
-			return (new_node->value);
+			if (strcmp(ht->array[index]->key, key) == 0)
+			{
+				return (new_node->value);
+			}
+			new_node = new_node->next;
 		}
-		new_node = new_node->next;
-
 	}
 	return (NULL);
 }
