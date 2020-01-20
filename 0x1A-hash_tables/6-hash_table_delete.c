@@ -23,7 +23,9 @@ void hash_table_delete(hash_table_t *ht)
 				free(new_node->value);
 				free(new_node);
 				new_node = delete;
+				delete = NULL;
 			}
+
 			free(new_node);
 		}
 	}
